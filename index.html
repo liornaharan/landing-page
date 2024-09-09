@@ -7,20 +7,30 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #000;
             color: #fff;
             margin: 0;
             padding: 0;
+            background: linear-gradient(135deg, #000, #333); /* גרדיאנט צבעוני כרקע */
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite; /* אנימציה של שינוי גרדיאנט */
         }
-        
-        h1, h2 {
-            color: #40E0D0; /* טורקיז */
-            text-align: center;
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
+            100% { background-position: 0% 0%; }
         }
 
         .header {
-            text-align: center;
+            background-color: #800080; /* סגול */
             padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 24px;
         }
 
         .container {
@@ -29,12 +39,31 @@
             padding: 20px;
         }
 
+        .business-highlight {
+            background-color: #40E0D0; /* טורקיז */
+            padding: 20px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .services {
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .services h2 {
+            color: #40E0D0; /* טורקיז */
+        }
+
         .button {
             display: inline-block;
             background-color: #40E0D0; /* טורקיז */
             color: #fff;
             padding: 15px 20px;
-            margin: 10px 0;
+            margin: 10px;
             border: none;
             border-radius: 5px;
             text-align: center;
@@ -70,11 +99,13 @@
         }
 
         .addresses {
+            text-align: center;
             margin-top: 30px;
         }
 
         .addresses h2 {
             margin-bottom: 10px;
+            color: #40E0D0; /* טורקיז */
         }
 
         .map-button {
@@ -102,17 +133,21 @@
     </div>
 
     <div class="container">
-        <h2>אודות ליאור נהרן</h2>
-        <p>ליאור נהרן, בן 40, מתגורר בקיבוץ גבת, אני סוכן ביטוח פנסיוני מורשה מטעם משרד האוצר ומתכנן פרישה. אני בעל ניסיון רב בתחום הפיננסי והפנסיוני. אני שם דגש על יחס אישי ובניית אמון עם לקוחותי, ומלווה אותם לכל אורך הדרך בהחלטות הפיננסיות שלהם.</p>
+        <div class="business-highlight">
+            <h2>אודות ליאור נהרן</h2>
+            <p>ליאור נהרן, בן 40, מתגורר בקיבוץ גבת, הוא סוכן ביטוח פנסיוני ומתכנן פרישה מורשה מטעם משרד האוצר, עם ניסיון רב בתחום הפיננסי. ליאור שם דגש על יחס אישי ובניית אמון עם לקוחותיו, ומלווה אותם לכל אורך הדרך בהחלטות הפיננסיות שלהם.</p>
+        </div>
 
-        <h2>שירותים</h2>
-        <ul>
-            <li>תכנון פיננסי הוליסטי</li>
-            <li>תכנון פרישה</li>
-            <li>בחינת תיק ביטוח</li>
-            <li>תכנון פנסיוני</li>
-            <li>השקעות אלטרנטיביות</li>
-        </ul>
+        <div class="services">
+            <h2>שירותים</h2>
+            <ul>
+                <li>תכנון פיננסי הוליסטי</li>
+                <li>תכנון פרישה</li>
+                <li>בחינת תיק ביטוח</li>
+                <li>תכנון פנסיוני</li>
+                <li>השקעות אלטרנטיביות</li>
+            </ul>
+        </div>
 
         <h2>הצעה ייחודית</h2>
         <p>פגישת ייעוץ ראשונית ללא עלות להערכת תיק הביטוח או התכנון הפנסיוני שלכם.</p>
@@ -129,13 +164,17 @@
 
     <div class="addresses">
         <h2>כתובות המשרד</h2>
-        <p><strong>קיבוץ גבת</strong></p>
-        <a href="https://waze.com/ul?ll=32.6667,35.1833" class="map-button">נווט באמצעות Waze</a>
-        <a href="https://goo.gl/maps/abcd1234" class="map-button">נווט באמצעות Google Maps</a>
+        <div>
+            <p><strong>קיבוץ גבת</strong></p>
+            <a href="https://waze.com/ul?ll=32.6667,35.1833" class="map-button">נווט באמצעות Waze</a>
+            <a href="https://goo.gl/maps/abcd1234" class="map-button">נווט באמצעות Google Maps</a>
+        </div>
 
-        <p><strong>רחוב מרקוני 10, חיפה</strong></p>
-        <a href="https://waze.com/ul?ll=32.7997,34.9885" class="map-button">נווט באמצעות Waze</a>
-        <a href="https://goo.gl/maps/xyz7890" class="map-button">נווט באמצעות Google Maps</a>
+        <div>
+            <p><strong>רחוב מרקוני 10, חיפה</strong></p>
+            <a href="https://waze.com/ul?ll=32.7997,34.9885" class="map-button">נווט באמצעות Waze</a>
+            <a href="https://goo.gl/maps/xyz7890" class="map-button">נווט באמצעות Google Maps</a>
+        </div>
     </div>
 </body>
 </html>
